@@ -35,7 +35,7 @@ Checks if the key exists in the file, and deletes it if it does. Returns `ERR_DX
 ```
 <?php
 require 'varDx.php';
-$abc = new \varDx\cDX; //create an object
+$dx = new \varDx\cDX; //create an object
 $dx->def('file2.dat'); //define data file
 $val1 = "this is a string";
 $dx->write('data1', $val1); //writes key to file
