@@ -9,7 +9,6 @@ License: `MIT License`
 ## Installation
 1. Save `varDX.php` on your server. You can rename it.  
 2. Add this to the top of all your files: `require 'varDx.php';`
-3. Have fun! 
 
 ## Functions
 ### `def(<filename>)`
@@ -41,6 +40,17 @@ $val1 = "this is a string";
 $dx->write('data1', $val1); //writes key to file
 echo $dx->read('data1'); //returns key value from file
 ```
+See https://gist.github.com/rahuldottech/3ad60944374c6aaf657588787dd0bdcd for more examples.
+
+## Data File Format
+The keys are stored in this format in the data file:
+```
+keyname__=__urlencoded_value_of_key__-__keytype
+```
+
+## Misc. Considerations
+1. Performance is better with smaller files. (So, for example, instead of using one file for the data of all users, use separate files for separate users).
+2. Make sure that the data files are not publically accessible.
 
 ## Changelog
  - `v1.0`: Initial version
