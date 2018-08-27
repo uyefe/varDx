@@ -4,7 +4,7 @@ namespace varDX;
 /*
 varDX - PHP flat-file storage
 by @rahuldottech
-v1.1
+v1.2
 --
 https://github.com/rahuldottech/
 https://rahul.tech/
@@ -27,7 +27,7 @@ class cDX {
 		}
 		
 		if(!$foundLine){
-			$writeData = $varName.'__=__'.urlencode($varVal).'__-__'.gettype($varVal).PHP_EOL;
+			$writeData = $varName.'__=__'.urlencode(serialize($varVal)).PHP_EOL;
 			file_put_contents($this->dataFile, $writeData, FILE_APPEND);	
 		} else {
 			return "ERR_DX_KEY_ALREADY_EXISTS";
@@ -45,10 +45,8 @@ class cDX {
 				}
 			}
 			if($foundLine){
-				$val = strstr($new_str, '__-__', true); 
-				$type = rtrim(str_replace($val.'__-__', '', $new_str));
-				settype($val, $type);
-				return urldecode($val);
+				$val = rtrim($new_str); 
+				return unserialize(urldecode($val));
 			} else {
 				return "ERR_DX_KEY_NOT_FOUND";
 			}
@@ -90,8 +88,8 @@ class cDX {
 				$this->del($varName);
 			} 
 		}	
-		$writeData = $varName.'__=__'.urlencode($varVal).'__-__'.gettype($varVal).PHP_EOL;
-		file_put_contents($this->dataFile, $writeData, FILE_APPEND);
+		$writeData = $varName.'__=__'.urlencode(serialize($varVal)).PHP_EOL;
+		file_put_contents($this->dataFile, $writeData, FILE_APPEND);	
 	}
 	
 	public function check($varName){
