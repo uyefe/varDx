@@ -1,6 +1,6 @@
 # varDx
 Simple PHP flat-file data storage library  
-Current version: `1.0`  
+Current version: `1.2`  
 License: `MIT License`  
 
 ## Requirements
@@ -45,7 +45,7 @@ See https://gist.github.com/rahuldottech/3ad60944374c6aaf657588787dd0bdcd for mo
 ## Data File Format
 The keys are stored in this format in the data file:
 ```
-keyname__=__urlencoded_value_of_key__-__keytype
+keyname__=__urlencode(serialize(value_of_key))
 ```
 
 ## Misc. Considerations
@@ -54,6 +54,8 @@ keyname__=__urlencoded_value_of_key__-__keytype
 
 ## Changelog
  - `v1.0`: Initial version
+ - `v1.1`: Bugfixes
+ - `v1.2`: Implement serialization
 
 ## Report Bugs
 Create an Issue or tweet to me at @rahuldottech
