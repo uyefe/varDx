@@ -54,6 +54,7 @@ keyname__=__urlencode(serialize(value_of_key))
 ## Misc. Considerations
 1. Performance is better with smaller files. (So, for example, instead of using one file for the data of all users, use separate files for separate users).
 2. Make sure that the data files are not publically accessible.
+3. Always sanitize any user input with [`htmlspecialchars()`](https://secure.php.net/manual/en/function.htmlspecialchars.php) or [`htmlentities()`](https://secure.php.net/manual/en/function.htmlentities.php).
 
 ## Changelog
  - `v1.0`: Initial version
