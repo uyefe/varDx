@@ -10,6 +10,9 @@ License: `MIT License`
 1. Save `varDX.php` on your server. You can rename it.  
 2. Add this to the top of all your files: `require 'varDx.php';`
 
+## Keys
+Because varDx uses [`serialize()`](https://secure.php.net/manual/en/function.serialize.php), the keys can be of any data type or structure.
+
 ## Functions
 ### `def(<filename>)`
 Defines the file in which all data is to be stored. Should be called before using any other functions. If the file doesn't exist, it will be created when data is first written to it using `write()` or `modify()`.
