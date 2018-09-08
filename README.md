@@ -7,7 +7,7 @@ License: `MIT License`
 1. PHP 5.6+
 
 ## Installation
-1. Save `varDX.php` on your server. You can rename it.  
+1. Save `varDx.php` on your server. You can rename it.  
 2. Add this to the top of all your files: `require 'varDx.php';`
 
 ## Keys
