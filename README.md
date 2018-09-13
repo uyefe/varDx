@@ -61,6 +61,7 @@ keyname__=__urlencode(serialize(value_of_key))
  - `v1.1`: Bugfixes
  - `v1.2`: Implement serialization
  - `v1.3`: Bugfixes
+ - `v1.4`: Bugfixes
 
 ## Report Bugs
 Create an Issue or tweet to me at @rahuldottech
