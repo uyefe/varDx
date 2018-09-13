@@ -4,7 +4,7 @@ namespace varDX;
 /*
 varDX - PHP flat-file storage
 by @rahuldottech
-v1.3
+v1.4
 --
 https://github.com/rahuldottech/
 https://rahul.tech/
@@ -76,9 +76,10 @@ class cDX {
 			if($this->check($varName)){
 				$this->del($varName);
 			} 
-			$writeData = $varName.'__=__'.urlencode(serialize($varVal)).PHP_EOL;
-			file_put_contents($this->dataFile, $writeData, FILE_APPEND);	
 		}
+		$writeData = $varName.'__=__'.urlencode(serialize($varVal)).PHP_EOL;
+		file_put_contents($this->dataFile, $writeData, FILE_APPEND);	
+		
 	}
 	
 	public function check($varName){
