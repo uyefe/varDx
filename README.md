@@ -50,6 +50,7 @@ The keys are stored in this format in the data file:
 ```
 keyname__=__urlencode(serialize(value_of_key))
 ```
+If you're adding keys manually, note that all keys must be on separate newlines!
 
 ## Misc. Considerations
 1. Performance is better with smaller files. (So, for example, instead of using one file for the data of all users, use separate files for separate users).
@@ -58,7 +59,7 @@ keyname__=__urlencode(serialize(value_of_key))
 
 ## Tips
 To make sure that your data files aren't accessible from the web, do one of these:
-1. Put the following at the beginning of all your files:
+1. Save your files with the `.php`` extensoin and put the following at the beginning of all your files:
     ```
     <?php
     __halt_compiler();
