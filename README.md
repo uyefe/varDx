@@ -1,6 +1,6 @@
 # varDx
 Simple PHP flat-file data storage library  
-Current version: `1.2`  
+Current version: `1.4`  
 License: `MIT License`  
 
 ## Requirements
@@ -55,6 +55,24 @@ keyname__=__urlencode(serialize(value_of_key))
 1. Performance is better with smaller files. (So, for example, instead of using one file for the data of all users, use separate files for separate users).
 2. Make sure that the data files are not publically accessible.
 3. Always sanitize any user input with [`htmlspecialchars()`](https://secure.php.net/manual/en/function.htmlspecialchars.php) or [`htmlentities()`](https://secure.php.net/manual/en/function.htmlentities.php).
+
+## Tips
+To make sure that your data files aren't accessible from the web, do one of these:
+1. Put the following at the beginning of all your files:
+    ```
+    <?php
+    __halt_compiler();
+    
+    ```
+    (The newline at the end it important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.
+2. Use a particular extensions (like `.dat`) for your data files and use the following code in your `.htaccess` file:
+    ```
+    <Files ~ "\.(dat)$">
+    order deny,allow
+    deny from all
+    </Files>
+    ```
+3. Place them outside of the web root directory.
 
 ## Changelog
  - `v1.0`: Initial version
