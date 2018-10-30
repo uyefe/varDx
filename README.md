@@ -65,7 +65,7 @@ To make sure that your data files aren't accessible from the web, do one of thes
     __halt_compiler();
     
     ```
-    (The newline at the end it important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.
+    (The newline at the end is important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.
 2. Use a particular extensions (like `.dat`) for your data files and use the following code in your `.htaccess` file:
     ```
     <Files ~ "\.(dat)$">
