@@ -59,7 +59,7 @@ If you're adding keys manually, note that all keys must be on separate newlines!
 
 ## Tips
 To make sure that your data files aren't accessible from the web, do one of these:
-1. Save your files with the `.php`` extensoin and put the following at the beginning of all your files:
+1. Save your files with the `.php` extension and put the following at the beginning of all your files:
     ```
     <?php
     __halt_compiler();
