@@ -65,7 +65,17 @@ To make sure that your data files aren't accessible from the web, do one of thes
     __halt_compiler();
     
     ```
-    (The newline at the end is important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.
+    (The newline at the end is important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.  
+    
+    Here's a function which allows you to create files with these lines at the top easily:
+    ```
+    function makeDataFile($filename){
+	    file_put_contents($filename, base64_decode("PD9waHANCl9faGFsdF9jb21waWxlcigpOw0KDQo="), FILE_APPEND);
+    }
+    
+    makeDataFile(myData.dat.php);
+    ```
+
 2. Use a particular extensions (like `.dat`) for your data files and use the following code in your `.htaccess` file:
     ```
     <Files ~ "\.(dat)$">
