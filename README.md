@@ -3,6 +3,10 @@ Simple PHP flat-file data storage library
 Current version: `1.4`  
 License: `MIT License`  
 
+# About
+varDx allows you to store data (objects) in files in the form of "keys", which you can later read and modify.  
+It was initially developed primarily to facilitate sharing of data between independent PHP script and sessions, but it can be used to create and manage simple databases.
+
 ## Requirements
 1. PHP 5.6+
 
@@ -50,7 +54,10 @@ The keys are stored in this format in the data file:
 ```
 keyname__=__urlencode(serialize(value_of_key))
 ```
-If you're adding keys manually, note that all keys must be on separate newlines!
+If you're adding keys manually, note that all keys must be on separate newlines!  
+Lines which are empty or don't match this format are automatically skipped.
+
+This format also allows for data to be easily read by applications or scripts written in languages other than PHP.
 
 ## Misc. Considerations
 1. Performance is better with smaller files. (So, for example, instead of using one file for the data of all users, use separate files for separate users).
