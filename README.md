@@ -4,7 +4,7 @@ Current version: `1.4`
 License: `MIT License`  
 
 ## About
-varDx allows you to store data (objects) in files in the form of "keys", which you can later read and modify.  
+varDx is a tiny library (~2KB) that allows you to store data (objects) in files in the form of "keys", which you can later read and modify.  
 It was initially developed primarily to facilitate sharing of data between independent PHP script and sessions, but it can be used to create and manage simple databases.
 
 ## Requirements
@@ -71,8 +71,9 @@ To make sure that your data files aren't accessible from the web, do one of thes
     <?php
     __halt_compiler();
     
+    
     ```
-    (The newline at the end is important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.  
+    (The trailing newline at the end is important!) This will stop PHP from parsing the data in your file, but will also not show anything when the file is accessed from the web.  
     
     Here's a function which allows you to create files with these lines at the top easily:
     ```
