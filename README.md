@@ -47,7 +47,7 @@ $val1 = "this is a string";
 $dx->write('data1', $val1); //writes key to file
 echo $dx->read('data1'); //returns key value from file
 ```
-See https://gist.github.com/rahuldottech/3ad60944374c6aaf657588787dd0bdcd for more examples.
+See [this gist](https://gist.github.com/rahuldottech/3ad60944374c6aaf657588787dd0bdcd) for more examples.
 
 ## Data File Format
 The keys are stored in this format in the data file:
