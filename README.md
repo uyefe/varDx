@@ -4,7 +4,7 @@ Current version: `1.4`
 License: `MIT License`  
 
 ## About
-varDx is a tiny library (~2KB) that allows you to store data (objects) in files in the form of "keys", which you can later read and modify.  
+varDx is a tiny library (~2 KB; <100 lines) that allows you to store data (objects) in files in the form of "keys", which you can later read and modify.  
 It was initially developed primarily to facilitate sharing of data between independent PHP script and sessions, but it can be used to create and manage simple databases.
 
 ## Requirements
